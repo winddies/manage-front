@@ -1,0 +1,46 @@
+
+.hr() {
+  border-bottom: 1px solid #eee;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.setBackground(@bg-color) {
+  --main-sidebar-bg-color: @bg-color;
+  --main-navbar-bg-color: @bg-color;
+  --main-content-bg-color: @bg-color;
+}
+
+.setIcon(@default, @active) {
+  --icon-color: @default;
+  --active-icon-color: @active;
+}
+
+.setEditorBackground(@bg-color, @font-color) {
+  --editor-bg-color: @bg-color;
+  --editor-font-color: @font-color;
+}
+
+@font-face {
+  font-family: huanghuangti;
+  // src: url('~assets/XinYeHuiTi/XinYeHuiTi-2.otf') format('opentype');
+  src: url('~assets/ZaoZiGongFangMiMengTi/ZaoZiGongFangMiMengTi-2.ttf') format('opentype');
+}
+
+body {
+  font-family: huanghuangti;
+  &#theme-sunny {
+    .setBackground(@white);
+    .setEditorBackground(@white, @dark);
+    .setIcon(@gray-dark, @pink);
+  }
+
+  &#theme-moon {
+    .setBackground(@dark);
+    .setEditorBackground(@dark, @white);
+    .setIcon(@gray-white, @pink);
+  }
+}
